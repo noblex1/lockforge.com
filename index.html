@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LockForge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button class="theme-toggle-icon" onclick="toggleTheme()">
+    <span id="themeIcon">🌙</span><br>
+  </button>
+  <div class="container">
+    <div class="title">LockForge</div>
+    <div>
+      <label>Password Length: <span id="lengthValue">12</span></label>
+      <input type="range" min="6" max="32" value="12" id="lengthRange" />
+
+      <label><input type="checkbox" id="includeUpper" checked /> Uppercase</label>
+      <label><input type="checkbox" id="includeLower" checked /> Lowercase</label>
+      <label><input type="checkbox" id="includeNumbers" checked /> Numbers</label>
+      <label><input type="checkbox" id="includeSymbols" /> Symbols</label>
+
+      <div class="output" id="passwordOutput">YourPassword123</div>
+
+      <button onclick="generatePassword()">Generate Password</button>
+      <button onclick="savePassword()">Save Password</button>
+      <button onclick="downloadPasswords()">Download Passwords</button>
+    </div>
+
+    <div class="saved-passwords">
+      <h3>Saved Passwords</h3>
+      <ul id="savedList"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
